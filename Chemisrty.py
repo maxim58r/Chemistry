@@ -5,7 +5,7 @@ def output(event):
     txt = entry1.get()
 
 
-    text = "text.txt"
+    text = "chemistry_elements.txt"
     element_file = open(text, mode='r')
     look_text = element_file.read()
     num = txt
