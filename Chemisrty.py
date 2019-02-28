@@ -1,32 +1,39 @@
 from tkinter import *
+import re
 
-ABOUT_TEXT = """"Водоро́д (H, лат. hydrogenium) 
- 1-й химический элемент периодической системы. Самый
-  распространённый во Вселенной элемент. Как простое
-  вещество — H2 — представляет собой лёгкий бесцветный
-  газ, который в смеси с воздухом или кислородом горюч и взрывоопасен!"
-"""
+def output(event):
+    txt = entry1.get()
 
 
+    text = "text.txt"
+    element_file = open(text, mode='r')
+    look_text = element_file.read()
+    num = txt
+    textsearch = r"{}:\[(.+)\]".format(num)
 
-def clickAbout():
+    result = re.findall(textsearch, look_text)
+
     toplevel = Toplevel()
-    label1 = Label(toplevel, text=ABOUT_TEXT, height=0, width=100)
+    label1 = Label(toplevel, text=result, height=10, width=100)
     label1.pack()
-    #label2 = Label(toplevel, text=DISCLAIMER, height=0, width=100)
-    #label2.pack()
-
 
 app = Tk()
-app.title("SPIES")
-app.geometry("500x300+200+200")
+app.title("Химические элементы таблицы Менделеева")
+app.geometry("500x150+200+200")
+
+
 
 label = Label(app, text="Введите номер химического элемента", height=0, width=100)
-b = Button(app, text="Quit", width=20, command=app.destroy)
-button1 = Button(app, text="About SPIES", width=20, command=clickAbout)
+b = Button(app, text="Выход", width=20, command=app.destroy)
+button1 = Button(app, text="Введите порядковый номер", width=30)
+entry1 = Entry(app, width=3, font=3)
+
 
 label.pack()
 b.pack(side='bottom',padx=0,pady=0)
 button1.pack(side='bottom',padx=5,pady=5)
+entry1.pack(side='bottom',padx=5,pady=5)
+
+button1.bind("<Button-1>", output)
 
 app.mainloop()
