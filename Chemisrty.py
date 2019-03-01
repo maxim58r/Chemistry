@@ -14,8 +14,9 @@ def output(event):
     result = re.findall(textsearch, look_text)
 
     toplevel = Toplevel()
-    label1 = Label(toplevel, text=result, height=10, width=100)
+    label1 = Label(toplevel, text=result, height=0, width=100, wraplength=700)
     label1.pack()
+
 
 app = Tk()
 app.title("Химические элементы таблицы Менделеева")
