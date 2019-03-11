@@ -25,7 +25,7 @@ def output(event):  # Обработка вводимого текста и не
 
 def chem_element_word(word):  # Поиск текста в текстовом файле по названию
 
-    text = "text.txt"
+    text = "chemistry_elements.txt"
     element_file = open(text, mode='r')
     look_text = element_file.read()
     number = word.lower()
@@ -36,7 +36,7 @@ def chem_element_word(word):  # Поиск текста в текстовом ф
 
 def chem_element_numer(num):  # Поиск текста в текстовом файле по номеру
 
-    text = "text.txt"
+    text = "chemistry_elements.txt"
     element_file = open(text, mode='r')
     look_text = element_file.read()
     number = num
