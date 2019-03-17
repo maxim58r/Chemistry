@@ -8,7 +8,7 @@ def window_open(label_1):  # Всплывающее окно
     toplevel.title("Химический элемент таблицы Менделеева")
     toplevel.geometry("700x500+600+200")
 
-    label = Label(toplevel, text=label_1, height=0, width=300, wraplength=700)
+    label = Label(toplevel, text='Порядковый номер элемента', height=0, width=600, wraplength=700)
     label.pack()
     scroll = Scrollbar(toplevel, orient='vertical')
     scroll.pack(side=RIGHT, fill=Y)
